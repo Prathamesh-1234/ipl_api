@@ -23,8 +23,7 @@ load_dotenv()
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
-# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
-ALLOWED_HOSTS=['127.0.0.1','ipl-api-ikfo.onrender.com',  'localhost']
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -35,8 +34,15 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'ipl-api-ikfo.onrender.com'
+]
 
+# Add hosts from environment variable if present
+additional_hosts = os.getenv('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS += [host for host in additional_hosts if host]
 
 # Application definition
 
