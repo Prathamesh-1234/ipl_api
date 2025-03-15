@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Endpoints</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="text-center mb-4">IPL API Endpoints</h1>
+        <div class="card p-4 shadow-sm">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="/api/register/" class="text-decoration-none">User Registration</a></li>
+                <li class="list-group-item"><a href="/api/token/" class="text-decoration-none">Token Obtain Pair</a></li>
+                <li class="list-group-item"><a href="/api/token/refresh/" class="text-decoration-none">Token Refresh</a></li>
+                <li class="list-group-item"><a href="/swagger/" class="text-decoration-none">Swagger UI</a></li>
+                <li class="list-group-item"><a href="/api/matches/" class="text-decoration-none">Match List</a></li>
+                <li class="list-group-item"><a href="/api/matches/<match_id>/" class="text-decoration-none">Match Detail (Replace match_id)</a></li>
+                <li class="list-group-item"><a href="/api/players/" class="text-decoration-none">Player List</a></li>
+                <li class="list-group-item"><a href="/api/players/<player_name>/" class="text-decoration-none">Player Detail (Replace player_name)</a></li>
+                <li class="list-group-item"><a href="/api/matches/<match_id>/batting/" class="text-decoration-none">Batting Summary (Replace match_id)</a></li>
+                <li class="list-group-item"><a href="/api/matches/<match_id>/bowling/" class="text-decoration-none">Bowling Summary (Replace match_id)</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

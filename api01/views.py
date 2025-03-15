@@ -153,3 +153,9 @@ class BowlingSummaryView(ListAPIView):
         logger.info(f"Retrieved bowling summary for match {match_id} page {page} from the database and cached it.")
 
         return response
+
+
+from django.shortcuts import render
+
+def api_overview(request):
+    return render(request, 'api_urls.html')

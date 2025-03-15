@@ -20,7 +20,7 @@ from rest_framework import permissions
 from rest_framework.authentication import SessionAuthentication
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-from api01.views import UserRegistrationView
+from api01.views import UserRegistrationView, api_overview
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
@@ -37,6 +37,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', api_overview), 
     path( 'api/', include('api01.urls') ),
     path('api/register/', UserRegistrationView.as_view(), name='user-register'),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
