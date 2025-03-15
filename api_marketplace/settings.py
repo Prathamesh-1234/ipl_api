@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'drf_yasg',
     'django_redis',
+    # 'corsheaders',
 
 ]
 
@@ -101,8 +102,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
 ]
-
+# CORS_ALLOW_ALL_ORIGINS = True 
 ROOT_URLCONF = 'api_marketplace.urls'
 
 TEMPLATES = [
@@ -154,10 +156,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+REDIS_URL = os.getenv("REDIS_URL", "redis://127.0.0.1:6379/1")
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://localhost:6379/1", 
+        "LOCATION": REDIS_URL, 
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
