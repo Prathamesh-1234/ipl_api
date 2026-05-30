@@ -1,2 +1,32 @@
-.env
-venv/
+```
+# Dependencies
+node_modules/
+
+# Build artifacts
+.resume-analyzer/client/node_modules/.vite/
+
+# Environment variables
+.env*
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE files
+.vscode/
+.idea/
+
+# Compiled JavaScript
+*.js.map
+*.mjs.map
+
+# Package lock files
+package-lock.json
+```
